@@ -1,0 +1,4 @@
+hrs = input('Input Hours:')
+wage = input('Input wage:')
+pay = float(hrs) * float(wage)
+print('Pay: ',pay)
