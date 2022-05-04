@@ -13,13 +13,11 @@ rate = float(input('Enter Wage: '))
 
 def computepay(hrs, rate):
     if hrs > 40:
-        pay = 40 * rate
-        total = float(pay + (rate * (hrs - 40)))
-        return total
-    else :
-        pay = hrs * rate
-        return rate
+       hrs = hrs - 40
+       hrs = hrs * 1.5
+    rate = rate
+    pay = hrs * rate
 
-dang = computepay(total)
+print(computepay(hrs * rate))
 
 
