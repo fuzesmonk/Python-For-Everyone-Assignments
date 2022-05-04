@@ -6,18 +6,21 @@
 #You should use input to read a string and float() to convert the string to a number.
 #Do not worry about error checking the user input unless you want to - you can assume the user types numbers properly.
 #Do not name your variable sum or use the sum() function.
-
-hrs = float(input('Enter Hours Worked: '))
+hrs = int(input('Enter Hours Worked: '))
 rate = float(input('Enter Wage: '))
 
 
-def computepay(hrs, rate):
-    if hrs > 40:
-       hrs = hrs - 40
-       hrs = hrs * 1.5
-    rate = rate
-    pay = hrs * rate
+def computepay(hrs,rate) :
+    if hrs > 40 :
+        ot = hrs - 40
+        # Overtime Calculation
+        othr = ot  * 1.5
+        # Add hours to overtime hours
+        hrs = 40 + othr
+        pay = hrs * rate
+        return(pay)
+    else :
+        return(hrs * rate)    
 
-print(computepay(hrs * rate))
-
-
+total = computepay(hrs, rate)
+print("Pay",total)
