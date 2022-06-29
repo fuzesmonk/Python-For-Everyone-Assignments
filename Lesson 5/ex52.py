@@ -5,12 +5,26 @@
 
 done = True
 while(done) :
+    first_loop = True
     answer = input("Input Number: ")
+    if first_loop == True :
+        largest_number = answer
+        smallest_number = answer
+    else :
+        try
+        if answer > largest_number :
+            largest_number = answer
+        elif answer < smallest_number :
+            smallest_number = answer
+        else:
+            print("Not a valid answer")
+        if "done"  :
+            if answer == int:
+                break
 
-    
-    if "done"  :
-        if answer == int:
-            
+print(largest_number)
+print(smallest_number)
+                
 
 
 
