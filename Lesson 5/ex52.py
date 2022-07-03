@@ -4,26 +4,23 @@
 #  Enter 7, 2, bob, 10, and 4 and match the output below. 
 
 done = True
-first_loop = True
+answer = (input("Enter Number: "))
+largest_number = (answer)
+smallest_number = (answer)
 while(done) :
-    answer = str(input("Enter Number: "))
-    if answer == str(done) :
-        break
-    else: 
-        try :
+    answer = (input("Enter Number: "))
+    try:       
+        if answer > largest_number :
             largest_number = answer
+        elif answer < smallest_number :
             smallest_number = answer
-            first_loop = False               
-        except first_loop == False :  
-            if answer > largest_number :
-                largest_number = answer
-            elif answer < smallest_number :
-                smallest_number = answer
-            else:
-                print("Not a valid answer")
-            if "done"  :
-                if answer == int:
-                    break   
+        else :
+            print("Not a valid answer")
+        if "done"  :
+             if answer == int:
+                break   
+    except answer == str("done") :
+        break
 
 print(largest_number)
 print(smallest_number)
