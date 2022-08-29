@@ -3,30 +3,29 @@
 # If the user enters anything other than a valid number catch it with a try/except and put out an appropriate message and ignore the number.
 #  Enter 7, 2, bob, 10, and 4 and match the output below. 
 
+largest = None
+smallest = None
 
 done = True
-first_loop = True
-largest_number = False
-smallest_number = False
-
-while(done) :
-    answer = input("Input Number: ")
-    try:
-        answer = int(answer)
-        if answer > largest_number :
-            largest_number = answer
-        elif answer < smallest_number :
-            smallest_number = answer
-        else :
-            continue 
-    except TypeError :
-        print("Not a valid Answer")  
-        continue  
-    except answer == type(str) and answer == str("done") :
-        print(f'The largest number is {largest_number}')
-        print(f'The smallest number is {smallest_number}')
+while(done):
+    number = input("Enter Number: ")
+    if number == "done" :
         break
-                
+    try:
+        testnum = float(number)
+    except :
+        print("Invalid input")
+        continue
+    if largest == None or smallest == None:
+        largest = testnum
+        smallest = testnum
+    if testnum > largest:
+        largest = testnum
+    if testnum < smallest:
+        smallest = testnum
+    largest = int(largest)
+    smallest = int(smallest)
 
-
+print(f"Maximum is {largest}")
+print(f"Minimum is {smallest}")
 

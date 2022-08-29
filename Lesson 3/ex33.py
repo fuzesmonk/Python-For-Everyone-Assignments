@@ -12,12 +12,6 @@
 score = float(input("Enter Score: "))
 
 try:
-    if score < 0.0 :
-        print('Not a Valid Score')
-    elif score > 1 :
-        print('Not a Valid Score')
-
-except:
     if score >= 0.9 :
         print('A')
     elif score >= 0.8 :
@@ -28,3 +22,6 @@ except:
         print('D')
     else :
         print('F')
+
+except (score > 1.0) or (score < 0.0):
+    print("Not a valid score")
