@@ -6,6 +6,7 @@
 # Use the file name mbox-short.txt as the file name
 average = 0
 amountfordivide = 0
+totalvalue = 0
 fname = input("Enter file name: ")
 fh = open(fname)
 for line in fh:
@@ -13,9 +14,13 @@ for line in fh:
     if not line.startswith("X-DSPAM-Confidence:"):
         continue
     #print(line)
-    value = float(line[20:30])  
-    value += (value)
+    value = float(line[20:])  
+    totalvalue += (value)
     amountfordivide += 1
-average = value / amountfordivide
+    #print(f'The value is {value}')
+    #print(f'The amount to divide by is {amountfordivide}')
+    #print(value / amountfordivide)
+    
+average = totalvalue / amountfordivide
 print(f'Average spam confidence: {average}')
 #print("Done")
